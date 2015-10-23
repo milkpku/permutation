@@ -12,7 +12,7 @@ protected:
     // void rank_to_mid();    // convert rank to mid_num order
     // void mid_to_rank();    // convert mid_num order to rank
 
-    // bool valid_rank(long r);     // exam rank number  
+    bool valid_rank(long r);     // exam rank number  
     // bool valid_mid_num();  // exam mid_num number
 
 public:
