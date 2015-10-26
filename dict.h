@@ -1,16 +1,18 @@
 #ifndef DICT_PERMUTATION
 #define DICT_PERMUTATION
 
-class dict: public mid_num_in
+#include "mid_num.h"
+
+class dict:public mid_num_in
 {
 protected:
 	char* order;
 	bool refreshed;
 
 public:
-	dict(int s, int r = 0);
+	dict(int s, long r = 0);
 	void refresh();
-	char* order()
+	char* order();
 };
 
 #endif

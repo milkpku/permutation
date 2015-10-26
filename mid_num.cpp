@@ -13,29 +13,29 @@ long fact(int s){
     };
 };
 
-rank::rank(int s, long r){
+rank_class::rank_class(int s, long r){
     this->length = s;
     MAX_RANK = fact(s);
     set_rank(r);
 };
 
-bool rank::valid_rank(long r){
+bool rank_class::valid_rank(long r){
     if (r >= this->MAX_RANK){
-        printf('Invalid input r! It is too large.\n');
+        printf("Invalid input r! It is too large.\n");
         return false;
     };
-    if (r >= this->MAX_RANK)or(r < 0){
-        printf('Invalid input r! It is negetive.\n');
+    if (r < 0){
+        printf("Invalid input r! It is negetive.\n");
         return false;
     };
 
     return true;
 };
 
-bool rank::set_rank(int r){
+bool rank_class::set_rank(long r){
     // judge if r is valid
     if (!valid_rank(r)){
-        printf('Failed when setting rank!\n');
+        printf("Failed when setting rank!\n");
         return false;
     };
 
@@ -45,7 +45,7 @@ bool rank::set_rank(int r){
 };
 
 ///////////////////////////////////////////// function of mid_num_in
-mid_num_in::mid_num_in(int s, long r):rank(s,r)
+mid_num_in::mid_num_in(int s, long r):rank_class(s,r)
 {
     this->mid_length = s-1;
     this->mid_num = new int[mid_length];
@@ -89,7 +89,7 @@ bool mid_num_in::alter(long amount){
 }
 
 /////////////////////////////////////////////// function of mid_num_de
-mid_num_de::mid_num_de(int s, long r):rank(s,r)
+mid_num_de::mid_num_de(int s, long r):rank_class(s,r)
 {
     this->mid_length = s-1;
     this->mid_num = new int[mid_length];

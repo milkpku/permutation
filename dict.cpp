@@ -15,18 +15,18 @@ void dict::refresh()
 	pick_list pool(this->length);
 	
 	for(int i=0;i<this->length-1;i++)
-		order[i] = pool.pop(mid_num[i]);
+		this->order[i] = pool.pop(mid_num[i]);
 		
-	order[length-1] = pool.pop(0);
+	this->order[length-1] = pool.pop(0);
 	
 	this->altered = false;
 }
 
 char* dict::order()
 {
-	if this->altered{
+	if (this->altered){
 		this->refresh();
 	};
 	
-	return order;
+	return this->order;
 }
