@@ -1,41 +1,32 @@
-# include <iostream>
-# include "pick_list.h"
-# include "dict.h"
+#include <iostream>
+#include "pick_list.h"
+#include "dict.h"
 using namespace std;
 
-bool dict::dict_gen(int* mid_num, char* outstream){
-	
-	pick_list l(this->size);
-
-	for (int i = 0; i < this->size; i++)
-		outstream[i] = l.pop(mid_num[i]);
-
-	return true;
+dict::dict(int s, long r) : mid_num_in(s, r)
+{
+	this->order = new char[s];
+	this->refreshed = false;
+	this->refresh();	
 }
 
-bool dict::dict_increase_mid(int* mid_num){
-
-	int p = this->size - 2;
-	int r = 1; // increase mid_num
-	int step = 2; 
-
-	do{
-		mid_num[p] += r;
-		r = mid_num[p] / step;
-		mid_num[p] %= step;
-		p--;
-		step++;
-	} while ((r > 0) && (p >= 0));
+void dict::refresh()
+{
+	pick_list pool(this->length);
 	
-	// if over flow
-	if (p < 0){
-		return false;
-	}
-	else{
-		return true;
-	}
+	for(int i=0;i<this->length-1;i++)
+		order[i] = pool.pop(mid_num[i]);
+		
+	order[length-1] = pool.pop(0);
+	
+	this->altered = false;
 }
 
-int main(int argc, char* argv[]){
-
+char* dict::order()
+{
+	if this->altered{
+		this->refresh();
+	};
+	
+	return order;
 }

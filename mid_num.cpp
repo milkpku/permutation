@@ -3,6 +3,7 @@
 
 using namespace std;
 
+////////////////////////////// function of class rank 
 long fact(int s){
     if (s<3){
         return s;
@@ -38,11 +39,12 @@ bool rank::set_rank(int r){
         return false;
     };
 
-    // rank to mid_num procedure
     this->rank = r;
+    this->altered = true;
     return true;
 };
 
+///////////////////////////////////////////// function of mid_num_in
 mid_num_in::mid_num_in(int s, long r):rank(s,r)
 {
     this->mid_length = s-1;
@@ -53,7 +55,7 @@ mid_num_in::mid_num_in(int s, long r):rank(s,r)
     }
 };
 
-bool mid_num_in::set_mid(int r){
+bool mid_num_in::set_mid(long r){
     // judge if r is valid
     if (!this->set_rank(r)){
         return false;
@@ -68,7 +70,7 @@ bool mid_num_in::set_mid(int r){
     return true;
 }
 
-bool mid_num_in::alter(int amount){
+bool mid_num_in::alter(long amount){
     if (!this->set_rank(rank+amount)){
         printf("Failed when changing mid_num_in!\n");
         return false;
@@ -80,6 +82,51 @@ bool mid_num_in::alter(int amount){
         mid_num[p] += amount;
         amount = mid_num[p] / (length - p);
         mid_num[p] %= (length - p);
+        p--;
+    } while (amount!=0);
+
+    return true;
+}
+
+/////////////////////////////////////////////// function of mid_num_de
+mid_num_de::mid_num_de(int s, long r):rank(s,r)
+{
+    this->mid_length = s-1;
+    this->mid_num = new int[mid_length];
+    
+    if (!this->set_mid(r)){
+        printf("Failed when instance mid_num_de!\n");
+    }
+};
+
+bool mid_num_de::set_mid(long r){
+    // judge if r is valid
+    if (!this->set_rank(r)){
+        return false;
+    };
+
+    // rank to mid_num procedure
+    for (int i = length; i>1; i--){
+        mid_num[i-2] = r % i;
+        r /= i;
+    };
+
+    return true;
+}
+
+bool mid_num_de::alter(long amount){
+    if (!this->set_rank(rank+amount)){
+        printf("Failed when changing mid_num_de!\n");
+        return false;
+    };
+
+    // rank to mid_num procedure
+    int p = mid_length-1;
+    do{
+        mid_num[p] += amount;
+        amount = mid_num[p] / (p + 2);
+        mid_num[p] %= (p + 2);
+        p--;
     } while (amount!=0);
 
     return true;
