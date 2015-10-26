@@ -22,7 +22,7 @@ void dict::refresh()
 	this->altered = false;
 }
 
-char* dict::order()
+char* dict::get_order()
 {
 	if (this->altered){
 		this->refresh();

@@ -12,7 +12,7 @@ protected:
 public:
 	dict(int s, long r = 0);
 	void refresh();
-	char* order();
+	char* get_order();
 };
 
 #endif

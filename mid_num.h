@@ -15,6 +15,13 @@ public:
 
     rank_class(int s, long r);
     bool set_rank(long r);
+    
+    ///////////////////////////////////////////////// for test
+    long rank_max(){return this->MAX_RANK;};                        // test_code
+    long rank_rank(){return this->rank;};                           // test_code
+    bool rank_altered(){return this->altered;};                     // test_code
+    ///////////////////////////////////////////////// for test
+    
 };
 
 class mid_num_in: public rank_class
@@ -28,6 +35,11 @@ public:
 
     bool set_mid(long r);
     bool alter(long amount);
+    
+    ///////////////////////////////////////////////// for test
+    int* get_mid_num(){return this->mid_num;};                        // test_code
+    ///////////////////////////////////////////////// for test
+    
 };
 
 class mid_num_de: public rank_class
@@ -41,6 +53,11 @@ public:
 
     bool set_mid(long r);
     bool alter(long amount);
+    
+    ///////////////////////////////////////////////// for test
+    int* get_mid_num(){return this->mid_num;};                        // test_code
+    ///////////////////////////////////////////////// for test
+    
 };
 
 
