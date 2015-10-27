@@ -1,5 +1,5 @@
 #include <iostream>
-#include "pick_list.h"
+#include "dict_list.h"
 #include "dict.h"
 using namespace std;
 
@@ -12,7 +12,7 @@ dict::dict(int s, long r) : mid_num_in(s, r)
 
 void dict::refresh()
 {
-	pick_list pool(this->length);
+	dict_list pool(this->length);
 	
 	for(int i=0;i<this->length-1;i++)
 		this->order[i] = pool.pop(mid_num[i]);

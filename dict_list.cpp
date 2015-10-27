@@ -1,10 +1,10 @@
 #include <iostream>
-#include "pick_list.h"
+#include "dict_list.h"
 using namespace std;
 
 const int A = int('a');
 
-pick_list::pick_list(int n){    // build a set which contains n character start from 'a'
+dict_list::dict_list(int n){    // build a set which contains n character start from 'a'
 	// distribute space
 	this->size = n;
 	this->dict = new char[n];
@@ -18,17 +18,12 @@ pick_list::pick_list(int n){    // build a set which contains n character start 
 	};
 }
 
-pick_list::~pick_list(){
-	printf("pick_list deleted.");
+dict_list::~dict_list(){
 	delete [] this->dict;
-	
-	printf("pick_list deleted.");
 	delete [] this->hash;
-	
-	printf("pick_list deleted.");
 }
 
-char pick_list::pop(int k){	// pop out the kth min one in the rest set
+char dict_list::pop(int k){	// pop out the kth min one in the rest set
 
 	if (k>=size){
 		printf("Exists limit of pick list!\n");
