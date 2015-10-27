@@ -2,9 +2,10 @@
 
 #include <iostream>
 #include "mid_num.h"
-#include "pick_list.h"
 #include "io_tools.h"
 #include "dict.h"
+#include "incr_permutation.h"
+#include "decr_permutation.h"
 
 using namespace std;
 
@@ -73,8 +74,8 @@ int main(int argc, char const *argv[])
 
 /////////////////////////////// pick_list
 
-    pick_list* p = new pick_list(5);
-	delete p;
+    // pick_list* p = new pick_list(5);
+	// delete p;
     
     // mid_num_in test_mid_in(5,0);
     // // pick_list* p = new pick_list(5);
@@ -105,11 +106,23 @@ int main(int argc, char const *argv[])
     // while (i<MAX_RANK){
     //     d.alter(1);
     //     print_char(5, d.get_order());
+	// 	i++;
     // };
     
     
 /////////////////////////////// increase
 
+    incr_permutation d(5);
+    
+    long MAX_RANK = fact(5)-1;
+    long i = 0;
+    
+    print_char(5, d.get_order());
+    while (i<MAX_RANK){
+        d.alter(1);
+        print_char(5, d.get_order());
+		i++;
+    };
 
 /////////////////////////////// decrease
 

@@ -71,7 +71,7 @@ bool mid_num_in::set_mid(long r){
 }
 
 bool mid_num_in::alter(long amount){
-    if (!this->set_rank(rank+amount)){
+    if (!this->set_rank(this->rank+amount)){
         printf("Failed when changing mid_num_in!\n");
         return false;
     };

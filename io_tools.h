@@ -1,6 +1,8 @@
 #ifndef IO_TOOLS
 #define	IO_TOOLS
 
+const int A = int('a');
+
 void print_char(int length, char* order)
 {
 	for(int i =0; i<length; i++)

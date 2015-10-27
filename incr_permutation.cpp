@@ -1,14 +1,14 @@
 #include <iostream>
-#include "dict.h"
+#include "incr_permutaion.h"
 using namespace std;
 
-dict::dict(int s, long r) : mid_num_in(s, r)
+incr_permutation::incr_permutation(int s, long r) : mid_num_in(s, r)
 {
 	this->order = new char[s];
 	this->refresh();	
 }
 
-char* dict::get_order()
+char* incr_permutation::get_order()
 {
 	if (this->altered)
 	{
@@ -18,31 +18,29 @@ char* dict::get_order()
 	return this->order;
 }
 
-void dict::refresh()
+void incr_permutation::refresh()
 {
 	const int A = int('a');
 	int size = this->length;
 	int* hash = new int[size];
 	char* pool = new char[size];
 	
-	// build dict
+	// build incr_permutation
 	for (int i = 0; i < size; i++)
-	{
-		hash[i] = i;
-		pool[i] = char(i + A);
-	};
+		hash[i] = size - i - 1;
 	
 	// pop out order
 	for(int i=0; i<this->length-1;i++)
 	{
 		int k = this->mid_num[i];
 		
-		if (k>=size){
+		if (k>=size)
+		{
 			printf("Invalid mid_num!\n");
 			return;
 		};
 		
-		this->order[i] = pool[hash[k]];
+		this->order[hash[k]] = char(i+A);
 		
 		// renew the hash list
 		size--;
