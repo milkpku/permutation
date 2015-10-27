@@ -34,7 +34,7 @@ protected:
 
 public:
     mid_num_in(int s, long r = 0);
-    ~mid_num_in(){delete mid_num;};
+    ~mid_num_in(){delete [] mid_num;};
 
     bool set_mid(long r);
     bool alter(long amount);
@@ -53,7 +53,7 @@ protected:
 
 public:
     mid_num_de(int s, long r = 0);
-    ~mid_num_de(){delete mid_num;};
+    ~mid_num_de(){delete [] mid_num;};
     
     bool set_mid(long r);
     bool alter(long amount);

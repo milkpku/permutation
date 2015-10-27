@@ -1,6 +1,7 @@
 // unit test
 
 #include <iostream>
+#include <time.h>
 #include "mid_num.h"
 #include "io_tools.h"
 #include "dict.h"
@@ -95,6 +96,8 @@ int main(int argc, char const *argv[])
     // printf("%c\n", p->pop());
 
 
+	long beginTime = clock();
+    
 /////////////////////////////// dict
 
     // dict d(5);
@@ -112,7 +115,26 @@ int main(int argc, char const *argv[])
     
 /////////////////////////////// increase
 
-    incr_permutation d(5);
+	// FILE* pfile;
+	// fopen_s(&pfile, "incr_permutation", "w");
+
+    // incr_permutation d(10);
+    
+    // long MAX_RANK = fact(10)-1;
+    // long i = 0;
+    
+    // fprint_char(pfile, 10, d.get_order());
+    // while (i<MAX_RANK){
+    //     d.alter(1);
+    //     fprint_char(pfile, 10, d.get_order());
+    //     // d.refresh();
+	// 	i++;
+    // };
+    
+    // fclose(pfile);
+
+/////////////////////////////// decrease
+    decr_permutation d(5);
     
     long MAX_RANK = fact(5)-1;
     long i = 0;
@@ -124,13 +146,12 @@ int main(int argc, char const *argv[])
 		i++;
     };
 
-/////////////////////////////// decrease
-
-
 /////////////////////////////// switch
 
+    
+    long endTime = clock();
 
-
+    printf("Runting time: %d ms\n", endTime - beginTime);
 	system("pause");
     return 0;
 }

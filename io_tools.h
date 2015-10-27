@@ -10,4 +10,11 @@ void print_char(int length, char* order)
 	printf("\n");
 };
 
+void fprint_char(FILE* pfile, int length, char* order)
+{
+	for(int i =0; i<length; i++)
+		fprintf(pfile, "%c ", order[i]);
+	fprintf(pfile, "\n");
+};
+
 #endif
