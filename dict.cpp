@@ -17,7 +17,7 @@ void dict::refresh()
 	for(int i=0;i<this->length-1;i++)
 		this->order[i] = pool.pop(mid_num[i]);
 		
-	this->order[length-1] = pool.pop(0);
+	this->order[this->length-1] = pool.pop(0);
 	
 	this->altered = false;
 }

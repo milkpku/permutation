@@ -12,11 +12,8 @@ private:
 public:
 	pick_list(int n); // build a set which contains n character start from 'a'
 
-	char pop(int k); // pop out the kth min one in the rest set
+	char pop(int k = 0); // pop out the kth min one in the rest set
 
-	~pick_list(){
-		delete(hash);
-		delete(dict);
-	}
+	~pick_list();
 };
 #endif

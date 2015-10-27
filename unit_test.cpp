@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include "mid_num.h"
+#include "pick_list.h"
+#include "io_tools.h"
 #include "dict.h"
 
 using namespace std;
@@ -46,7 +48,7 @@ int main(int argc, char const *argv[])
 */
 
 /////////////////////////////// mid_num_de
-
+/*
     mid_num_de test_mid_de(5,0);
     
     int* mid_num = test_mid_de.get_mid_num();
@@ -67,17 +69,45 @@ int main(int argc, char const *argv[])
     printf("\n");
     
     test_mid_de.alter(-50);
-
+*/
 
 /////////////////////////////// pick_list
 
+    pick_list* p = new pick_list(5);
+	delete p;
+    
+    // mid_num_in test_mid_in(5,0);
+    // // pick_list* p = new pick_list(5);
+    
+    // int* mid_num = test_mid_in.get_mid_num();
+    
+    // for(int i = 0; i<4; i++)
+    //     printf("%c ", p->pop(mid_num[i]));
+    // printf("%c\n", p->pop());
 
 
+    // test_mid_in.alter(33);
+    // p = new pick_list(5);
+    // mid_num = test_mid_in.get_mid_num();
+    // for(int i = 0; i<4; i++)
+    //     printf("%c ", p->pop(mid_num[i]));
+    // printf("%c\n", p->pop());
 
 
 /////////////////////////////// dict
 
-
+    // dict d(5);
+    
+    // long MAX_RANK = fact(5)-1;
+    // long i = 0;
+    
+    // print_char(5, d.get_order());
+    // while (i<MAX_RANK){
+    //     d.alter(1);
+    //     print_char(5, d.get_order());
+    // };
+    
+    
 /////////////////////////////// increase
 
 

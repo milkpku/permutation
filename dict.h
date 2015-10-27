@@ -11,6 +11,8 @@ protected:
 
 public:
 	dict(int s, long r = 0);
+	~dict(){delete(order);};
+	
 	void refresh();
 	char* get_order();
 };
