@@ -1,14 +1,14 @@
 #include <iostream>
-#include "decr_permutation.h"
+#include "per_cantor.h"
 using namespace std;
 
-decr_permutation::decr_permutation(int s, long r) : mid_num_de(s, r)
+per_cantor::per_cantor(int s, long r) : mid_num_in(s, r)
 {
 	this->order = new char[s];
 	this->refresh();	
 }
 
-char* decr_permutation::get_order()
+char* per_cantor::get_order()
 {
 	if (this->altered)
 	{
@@ -18,19 +18,18 @@ char* decr_permutation::get_order()
 	return this->order;
 }
 
-
-void decr_permutation::refresh()
+void per_cantor::refresh()
 {
 	const int A = int('a');
 	int size = this->length;
 	int* hash = new int[size];
 	
-	// build decr_permutation
+	// build per_cantor
 	for (int i = 0; i < size; i++)
 		hash[i] = size - i - 1;
 	
 	// pop out order
-	for (int i = this->mid_length-1; i >= 0; i--)
+	for(int i=0; i<this->mid_length; i++)
 	{
 		int k = this->mid_num[i];
 		
@@ -40,7 +39,7 @@ void decr_permutation::refresh()
 			return;
 		};
 		
-		this->order[hash[k]] = char(i+1+A);
+		this->order[hash[k]] = char(this->mid_length - i + A);
 		
 		// renew the hash list
 		size--;

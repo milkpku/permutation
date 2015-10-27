@@ -1,14 +1,14 @@
 #include <iostream>
-#include "dict.h"
+#include "per_dict.h"
 using namespace std;
 
-dict::dict(int s, long r) : mid_num_in(s, r)
+per_dict::per_dict(int s, long r) : mid_num_in(s, r)
 {
 	this->order = new char[s];
 	this->refresh();	
 }
 
-char* dict::get_order()
+char* per_dict::get_order()
 {
 	if (this->altered)
 	{
@@ -18,14 +18,14 @@ char* dict::get_order()
 	return this->order;
 }
 
-void dict::refresh()
+void per_dict::refresh()
 {
 	const int A = int('a');
 	int size = this->length;
 	int* hash = new int[size];
 	char* pool = new char[size];
 	
-	// build dict
+	// build per_dict
 	for (int i = 0; i < size; i++)
 	{
 		hash[i] = i;

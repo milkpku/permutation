@@ -4,9 +4,9 @@
 #include <time.h>
 #include "mid_num.h"
 #include "io_tools.h"
-#include "dict.h"
-#include "incr_permutation.h"
-#include "decr_permutation.h"
+#include "per_dict.h"
+#include "per_cantor.h"
+#include "per_vcantor.h"
 
 using namespace std;
 
@@ -73,34 +73,12 @@ int main(int argc, char const *argv[])
     test_mid_de.alter(-50);
 */
 
-/////////////////////////////// pick_list
-
-    // pick_list* p = new pick_list(5);
-	// delete p;
-    
-    // mid_num_in test_mid_in(5,0);
-    // // pick_list* p = new pick_list(5);
-    
-    // int* mid_num = test_mid_in.get_mid_num();
-    
-    // for(int i = 0; i<4; i++)
-    //     printf("%c ", p->pop(mid_num[i]));
-    // printf("%c\n", p->pop());
-
-
-    // test_mid_in.alter(33);
-    // p = new pick_list(5);
-    // mid_num = test_mid_in.get_mid_num();
-    // for(int i = 0; i<4; i++)
-    //     printf("%c ", p->pop(mid_num[i]));
-    // printf("%c\n", p->pop());
-
 
 	long beginTime = clock();
     
-/////////////////////////////// dict
+/////////////////////////////// per_dict
 
-    // dict d(5);
+    // per_dict d(5);
     
     // long MAX_RANK = fact(5)-1;
     // long i = 0;
@@ -116,9 +94,9 @@ int main(int argc, char const *argv[])
 /////////////////////////////// increase
 
 	// FILE* pfile;
-	// fopen_s(&pfile, "incr_permutation", "w");
+	// fopen_s(&pfile, "per_cantor", "w");
 
-    // incr_permutation d(10);
+    // per_cantor d(10);
     
     // long MAX_RANK = fact(10)-1;
     // long i = 0;
@@ -134,7 +112,7 @@ int main(int argc, char const *argv[])
     // fclose(pfile);
 
 /////////////////////////////// decrease
-    decr_permutation d(5);
+    per_vcantor d(5);
     
     long MAX_RANK = fact(5)-1;
     long i = 0;
