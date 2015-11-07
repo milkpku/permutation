@@ -13,6 +13,7 @@ public:
 	~per_dict(){delete [] order;};
 	
 	void refresh();
+	bool next();
 	char* get_order();
 };
 

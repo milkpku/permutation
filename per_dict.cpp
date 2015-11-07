@@ -53,3 +53,62 @@ void per_dict::refresh()
 	
 	this->altered = false;
 }
+
+bool per_dict::next()
+{
+	if (!this->alter(1))
+	{
+		return false;
+	}
+	
+	// find the first decrease one
+	int p = this->length - 2;
+	while ( this->order[p+1] < this->order[p] )
+		p--;
+	
+	if ( p == this->length - 2 )
+	{
+		// swap the last two
+		int temp;
+		temp = this->order[p];
+		this->order[p] = this->order[p-1];
+		this->order[p-1] = temp;
+		this->altered = false;
+		return true;
+	};
+	
+	// find next element to replace order[p]
+	int start = p, rear = this->length - 1, mid = (start + rear) /2;
+	while (start + 1 < rear)
+	{
+		if (this->order[mid] > this->order[p]){
+			start = mid;	
+		}else{
+			rear = mid - 1;
+		};
+		
+		mid = (start + rear)/2;
+	};
+	
+	if (this->order[rear] < this->order[p])
+	{
+		rear = rear - 1;
+	}
+	
+	// swap the order[p] and order[rear]
+	int temp;
+	temp = this->order[p];
+	this->order[p] = this->order[rear];
+	this->order[rear] = temp;
+	
+	// swtch the order of order[p:length]
+	for(int i = this->length-1; i > (this->length + p)/2; i++)
+	{
+		temp = this->order[this->length + p - i];
+		this->order[this->length + p - i] = this->order[i];
+		this->order[i] = temp;
+	};
+	
+	this->altered = false;
+	return true;
+}

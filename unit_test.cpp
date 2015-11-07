@@ -7,6 +7,7 @@
 #include "per_dict.h"
 #include "per_cantor.h"
 #include "per_vcantor.h"
+#include "per_switch.h"
 
 using namespace std;
 
@@ -112,19 +113,30 @@ int main(int argc, char const *argv[])
     // fclose(pfile);
 
 /////////////////////////////// decrease
-    per_vcantor d(5);
-    
-    long MAX_RANK = fact(5)-1;
-    long i = 0;
-    
-    print_char(5, d.get_order());
-    while (i<MAX_RANK){
-        d.alter(1);
-        print_char(5, d.get_order());
-		i++;
-    };
+  //  per_vcantor d(5);
+  //  
+  //  long MAX_RANK = fact(5)-1;
+  //  long i = 0;
+  //  
+  //  print_char(5, d.get_order());
+  //  while (i<MAX_RANK){
+  //      d.alter(1);
+  //      print_char(5, d.get_order());
+		//i++;
+  //  };
 
 /////////////////////////////// switch
+	per_switch d(5);
+
+	long MAX_RANK = fact(5) - 1;
+	long i = 0;
+
+	print_char(5, d.get_order());
+	while (i<MAX_RANK){
+		d.alter(1);
+		print_char(5, d.get_order());
+		i++;
+	};
 
     
     long endTime = clock();
