@@ -12,11 +12,10 @@ protected:
     bool altered;
 
     bool valid_rank(long r);     // exam rank number  
-
+    bool set_rank(long r);
 public:
 
     rank_class(int s, long r);
-    bool set_rank(long r);
     
     ///////////////////////////////////////////////// for test
     long rank_max(){return this->MAX_RANK;};                        // test_code
