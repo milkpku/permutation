@@ -2,7 +2,7 @@
 
 ## permutation basic
 
-程序包中提供了4种包含生成全排列的函数的类：`per_dict`，`per_cantor`，`per_vcantor`，`per_swanp`，分别继承递增进位制数`mid_num_in`和递减进位制数`mid_num_de`，有类方法：
+源代码包中提供了4种包含生成全排列的函数的类：`per_dict`，`per_cantor`，`per_vcantor`，`per_swanp`，分别继承递增进位制数`mid_num_in`和递减进位制数`mid_num_de`，有类方法：
 
 `get_order()`：获取当前排列
 
@@ -12,12 +12,13 @@
 
 通过调用`alter( 1 )`和`get_order()`能够生成相应的全排列
 
+可执行程序 permutation_basic.exe 可执行以上四种算法
 
 ## permutation speedup
 
 algorithm.c实现了4种速度比较快的全排列生成算法——字典序法`dict_perm`，邻位对换法`adj_perm`，改进的字典序法`dict_perm_new`和Heap算法`heap_perm`。
 
-permutation.c分别在n=10，11，12时调用这4种算法各10次，并将计时结果输出到benchmark.out文件中。
+permutation_speedup.exe 分别在 n=10，11，12 时调用这4种算法各10次，并将计时结果输出到benchmark.out文件中。
 
 vc环境下可以使用IDE直接编译，如果使用gcc，输入命令
 

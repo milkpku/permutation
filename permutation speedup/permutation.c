@@ -37,13 +37,18 @@ double benchmark(int type, int n)
 int main(int argc, char const *argv[])
 {
 	double runtime[4][3][10]; // [type][{10,11,12}][test{1~10}]
-	FILE *result = fopen("benchmark.out", "w");
+	FILE *result;
+	fopen_s(&result, "benchmark.out", "w");
 	
 	
 	for(int i = 0; i<4; i++)
 		for(int j = 0; j<3; j++)
-			for(int k = 0; k<10; k++)
-				runtime[i][j][k] = benchmark(i, j+10);
+		for (int k = 0; k < 10; k++)
+		{
+			runtime[i][j][k] = benchmark(i, j + 10);
+			printf("type %d, size %d, test %d\n", i, j + 10, k);
+		}
+				
 			
 	for(int j = 0; j<3; j++)
 	{
