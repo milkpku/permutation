@@ -5,8 +5,9 @@ const int A = int('a');
 
 void print_char(int length, char* order)
 {
-	for(int i =0; i<length; i++)
-		printf("%c ", order[i]);
+	printf("%c", order[0]);
+	for(int i =1; i<length; i++)
+		printf(" %c", order[i]);
 	printf("\n");
 };
 

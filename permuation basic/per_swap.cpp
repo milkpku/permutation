@@ -1,14 +1,14 @@
 #include <iostream>
-#include "per_switch.h"
+#include "per_swap.h"
 using namespace std;
 
-per_switch::per_switch(int s, long r) : mid_num_de(s, r)
+per_swap::per_swap(int s, long r) : mid_num_de(s, r)
 {
 	this->order = new char[s];
 	this->refresh();	
 }
 
-char* per_switch::get_order()
+char* per_swap::get_order()
 {
 	if (this->altered)
 	{
@@ -18,13 +18,13 @@ char* per_switch::get_order()
 	return this->order;
 }
 
-void per_switch::refresh()
+void per_swap::refresh()
 {
 	const int A = int('a');
 	int size = this->length;
 	int* hash = new int[size];
 	
-	// build per_switch
+	// build per_swap
 	for (int i = 0; i < size; i++)
 		hash[i] = i;
 	

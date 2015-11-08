@@ -3,7 +3,7 @@
 
 #include "mid_num.h"
 
-class per_dict:public mid_num_in
+class per_dict :public mid_num_in
 {
 protected:
 	char* order;
@@ -15,6 +15,7 @@ public:
 	void refresh();
 	bool next();
 	char* get_order();
+	bool change(long amount){ return this->alter(amount); };
 };
 
 #endif

@@ -16,13 +16,6 @@ protected:
 public:
 
     rank_class(int s, long r);
-    
-    ///////////////////////////////////////////////// for test
-    long rank_max(){return this->MAX_RANK;};                        // test_code
-    long rank_rank(){return this->rank;};                           // test_code
-    bool rank_altered(){return this->altered;};                     // test_code
-    ///////////////////////////////////////////////// for test
-    
 };
 
 class mid_num_in: public rank_class

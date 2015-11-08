@@ -14,6 +14,7 @@ public:
 	
 	void refresh();
 	char* get_order();
+	bool change(long amount){ return this->alter(amount); };
 };
 
 #endif

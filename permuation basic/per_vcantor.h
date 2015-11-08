@@ -3,7 +3,7 @@
 
 #include "mid_num.h"
 
-class per_vcantor:public mid_num_de
+class per_vcantor :public mid_num_de
 {
 protected:
 	char* order;
@@ -14,6 +14,7 @@ public:
 	
 	void refresh();
 	char* get_order();
+	bool change(long amount){ return this->alter(amount); };
 };
 
 #endif
